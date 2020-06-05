@@ -1,5 +1,9 @@
 # random-walk
-PHP class that generates random-walk combination arrays with numeric values. For instance, if you have 100 points to split into 5 parts, the algorithm will give you random combinations splitting this 100 points. A possible combination for number 100 and 5 parts would be [10, 20, 50, 5, 15]. For number 100 and 2 parts could be [50, 50] or [75, 20].
+PHP class that generates random-walk arrays with numeric values. 
+For instance, if you had 100 points to split into 5 parts this algorithm would give you random combinations splitting this 100 points. 
+
+A possible combination for number 100 in 5 parts would be [10, 20, 50, 5, 15] or [50, 50, 0, 0, 0]. 
+For number 100 in 2 parts could be [50, 50] or [75, 25].
 
     $accuracy = 0;
     $iterations = 100;
@@ -19,7 +23,7 @@ PHP class that generates random-walk combination arrays with numeric values. For
         }
     }
 
-You will try each combination in your ML algorithm and in case the combination improves the accuracy you can call to reinforce() so it is persisted and reused for the next iteration. You can also adjust the amount to sum and subtract in the next() call.
+You can try each combination in your ML algorithm and in case the combination improves your accuracy, you can call to reinforce() so the new combination is persisted and reused for the next iteration. You can also adjust the amount to sum and subtract in the next() call.
 
 ## About
 
