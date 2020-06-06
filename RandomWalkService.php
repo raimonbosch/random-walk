@@ -85,7 +85,7 @@ echo "Accuracy accomplished: " . $accuracy . '%' . "\n";
 
 function runYourMachineLearningAlgorithm($combination, $currentIteration)
 {
-    //TODO: Here you would call to your algorithm with this numeric parameters
+    //TODO: Here you would call to your algorithm with the numeric parameters in $combination
     $accuracy = rand(0, $currentIteration + 1); //Just a small example to make the algorithm run
 
     return $accuracy;
