@@ -66,9 +66,27 @@ class RandomWalkService
     }
 }
 
+$accuracy = 0;
+$numIterations = 100;
 $randomWalkService = new RandomWalkService(100, 5);
-for ($i = 0; $i < 100; $i++) {
+
+for ($i = 0; $i < $numIterations; $i++) {
     $combination = $randomWalkService->next(5);
-    echo json_encode($combination) . "\n";
-    $randomWalkService->reinforce($combination);
+    $newAccuracy = runYourMachineLearningAlgorithm($combination, $i);
+
+    if ($newAccuracy > $accuracy) {
+        echo json_encode($combination) . "\n";
+        $randomWalkService->reinforce($combination);
+        $accuracy = $newAccuracy;
+    }
+}
+
+echo "Accuracy accomplished: " . $accuracy . '%' . "\n";
+
+function runYourMachineLearningAlgorithm($combination, $currentIteration)
+{
+    //TODO: Here you would call to your algorithm with this numeric parameters
+    $accuracy = rand(0, $currentIteration + 1); //Just a small example to make the algorithm run
+
+    return $accuracy;
 }
